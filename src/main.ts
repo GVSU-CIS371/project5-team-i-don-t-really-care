@@ -12,14 +12,14 @@ import * as directives from "vuetify/directives";
 import router from "./router";
 
 const vuetify = createVuetify({
-  icons: {
-    defaultSet: "mdi",
-    aliases,
-    sets: { mdi, fa },
-  },
+    icons: {
+        defaultSet: "mdi",
+        aliases,
+        sets: { mdi, fa },
+    },
 
-  components,
-  directives,
+    components,
+    directives,
 });
 const pinia = createPinia();
 createApp(App).use(vuetify).use(pinia).use(router).mount("#app");

@@ -1,22 +1,22 @@
 type Product = {
-  name: string;
+    name: string;
 
-  description: string;
+    description: string;
 
-  price: number;
+    price: number;
 
-  rating: number;
+    rating: number;
 
-  stock: number;
+    stock: number;
 
-  image: string;
+    image: string;
 
-  category: string;
+    category: string;
 };
 
 type ProductDoc = {
-  id: string;
-  data: Product;
+    id: string;
+    data: Product;
 };
 
 export type { Product, ProductDoc };
