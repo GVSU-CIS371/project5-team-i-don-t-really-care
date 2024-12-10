@@ -4,6 +4,7 @@ import ElectronicsView from "./components/Electronics.vue";
 import ClothingView from "./components/Clothing.vue";
 import GroceriesView from "./components/Groceries.vue";
 import BestSellerView from "./components/BestSeller.vue";
+import AddProductView from "./components/AddProductView.vue";
 
 const routes = [
     {
@@ -33,6 +34,12 @@ const routes = [
         name: "bestseller",
         props: true,
         component: BestSellerView,
+    },
+    {
+        path: "/addproduct",
+        name: "addproduct",
+        props: true,
+        component: AddProductView,
     },
 ];
 

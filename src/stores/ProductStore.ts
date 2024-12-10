@@ -17,12 +17,6 @@ export const useProductStore = defineStore("ProductStore", {
             console.log("Store products after init:", this.products);
         },
 
-
-
-
-
-
-        
         /**
          * Filters products by a specific category.
          * @param {string} category - The category to filter by.
@@ -43,6 +37,11 @@ export const useProductStore = defineStore("ProductStore", {
             return this.products.filter(
                 (product) => product.data.rating >= minRating
             );
+        },
+
+        addProduct(product: ProductDoc) {
+            this.products.push(product);
+            console.log("Product added:", product);
         },
     },
 });
