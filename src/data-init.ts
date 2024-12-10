@@ -1,4 +1,8 @@
-import { ProductDoc } from "./types/product";
+import { database } from './firebase';  // Import Firebase database instance
+import { ref, set } from 'firebase/database';  // Import necessary Firebase functions
+import { ProductDoc } from './types/product';  // Assuming you have a ProductDoc type
+
+// Pre-initialized products data
 
 export const initProducts: ProductDoc[] = [
     {
@@ -127,3 +131,20 @@ export const initProducts: ProductDoc[] = [
         },
     },
 ];
+
+const pushDataToFirebase = () => {
+    // Loop through the products array and set each product in the database
+    initProducts.forEach((product) => {
+      const productRef = ref(database, 'products/' + product.id);  // Reference to the product's node using its ID
+      set(productRef, product.data)  // Push product data into Firebase
+        .then(() => {
+          console.log(`Product ${product.id} pushed successfully!`);
+        })
+        .catch((error) => {
+          console.error("Error pushing data for product", product.id, ":", error);
+        });
+    });
+  };
+  
+  // Call the function to push the data to Firebase
+  pushDataToFirebase();
